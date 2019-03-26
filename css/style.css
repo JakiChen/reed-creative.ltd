@@ -11,106 +11,128 @@ License: https://themeforest.net/licenses/standard
 /*******************************
   Table of Contents
 
-  1.0 Content Styles
-  2.0 Content Styles
-  3.0 Countdown
+  1.0 General Styles
+  2.0 Countdown
+
 *******************************/
 
 /**********************************/
 /******* 1.0 General Styles *******/
 /**********************************/
-html{
-  min-height: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-body {
-  background: #000;
-  margin: 0;
-  padding: 0;
-  font-family: Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-weight: 400
-}
+@import url("https://fonts.googleapis.com/css?family=Voltaire");
 
-/**********************************/
-/******* 2.0 Content Styles *******/
-/**********************************/
-header {
-  text-align: center;
-}
-
-header .logo {
-  height: 32px;
-  box-sizing: content-box;
-}
-.content {
-  text-align: center;
+#world {
   position: absolute;
-  z-index: 11;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 260px;
-}
-.content h1 {
-  color: #fff;
-  font-size: 4em;
-  position: relative;
-  font-weight: 400;
-  margin: 0 1vw;
-  font-family: 'Baloo Bhaijaan',serif;
-}
-.content h2 {
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.7em;
-  margin-bottom: 50px;
-  font-family: 'Playfair Display',serif;
-}
-.content a {
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
-  border: 2px solid #fff;
-  padding: 12px 19px;
-  color: #fff;
-  display: inline-block;
-}
-.content a:hover {
-  opacity: 0.8;
-}
-#starfield {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100%;
   width: 100%;
-  z-index: 0;
-  pointer-events: none;
-  padding: 0;
-  margin: 0 0 -6px 0;
+  height: 100%;
+  background-color: #dbe6e6;
   overflow: hidden;
 }
-#starfield canvas {
-  padding: 0;
-  margin: 0;
+#logo {
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+  left: 40px;
+}
+  #logo img {
+    height: 40px;
+  }
+#gameoverInstructions {
+  position: absolute;
+  font-family: 'Voltaire', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 62px;
+  text-align: center;
+  color: #ffc5a2;
+  opacity: 0;
+  left: 50%;
+  top: 37%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+#gameoverInstructions.show {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
+#dist {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.label {
+  position: relative;
+  font-family: 'Voltaire', sans-serif;
+  text-transform: uppercase;
+  color: #ffa873;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#distValue {
+  position: relative;
+  text-transform: uppercase;
+  color: #dc5f45;
+  font-size: 40px;
+  font-family: 'Voltaire';
+  text-align: center;
+}
+
+#instructions {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin: auto;
+  margin-bottom: 50px;
+  font-family: 'Voltaire', sans-serif;
+  color: #dc5f45;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.lightInstructions {
+  color: #5f9042;
+}
+
+
 /**********************************/
-/*******    3.0 Countdown   *******/
+/*******    2.0 Countdown   *******/
 /**********************************/
 #countdown {
-  margin: 2vh auto 4vh;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 100px;
-  width: 50%;
+    position: absolute;
+    display: none;
+    margin: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 50%;
+    font-family: 'Voltaire', sans-serif;
 }
 
 #countdown.show {
@@ -118,27 +140,26 @@ header .logo {
 }
 
 #countdown > div {
-  position: relative;
-  float: left;
-  width: 25%;
-  font-size: 4vw;
-  font-weight: 100;
-  line-height: .8em;
-  letter-spacing: 2px;
-  text-align: center;
-  color: #ccc;
-  font-family: 'Baloo Bhaijaan',serif;
+    position: relative;
+    float: left;
+    width: 25%;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: .8em;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #5f9042;
 }
 
 #countdown > div > span {
-  display: block;
-  font-size: 1.2vw;
-  font-weight: 100;
-  line-height: 1.2em;
-  letter-spacing: 0;
-  margin-top: 20px;
-  color: #777;
-  text-transform: lowercase
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    margin-top: 10px;
+    color: #9a9a9a;
+    text-transform: lowercase
 }
 
 @media (max-width:480px) {
